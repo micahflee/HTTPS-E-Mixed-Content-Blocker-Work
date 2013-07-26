@@ -43,7 +43,7 @@ class HTTPSERuleUpdater:
             new_xml = ''
             xml_lines = open(filename, 'r').readlines()
             for line in xml_lines:
-                if "<ruleset" in line:
+                if "<ruleset" in line and not "mixedcontent" in line:
                     if "platform=" in line:
                         line = re.sub(r'<ruleset (.*) platform="(.*)"(.*)>', r'<ruleset \1 platform="\2 mixedcontent"\3>', line)
                     else:
