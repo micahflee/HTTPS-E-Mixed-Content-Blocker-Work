@@ -10,17 +10,13 @@ if __name__ == '__main__':
             top1000.append(domain.strip())
     top1000.sort()
 
-    # load stable rules
+    # load httpse domains
     httpse_domains = []
-    for domain in open('data/httpse_stable_domains.csv', 'r').readlines():
-        try:
-            domain = domain.split(',')[1]
-            if domain.strip() != '':
-                domain = '.'.join(domain.split('.')[-2:])
-                if domain not in httpse_domains:
-                    httpse_domains.append(domain.strip())
-        except:
-            pass
+    for domain in open('data/mcb_domains.txt', 'r').readlines():
+        if domain.strip() != '':
+            domain = '.'.join(domain.split('.')[-2:])
+            if domain not in httpse_domains:
+                httpse_domains.append(domain.strip())
     httpse_domains.sort()
 
     # what's in common?

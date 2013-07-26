@@ -9,7 +9,7 @@ update_rulesets.py takes a list of domain names that trigger the MCB and it upda
 
     ./update_rulesets.py [https-everywhere git repository directory] [mixed content domains file]
 
-alexa1000.py loads the 1000 most popular domains from alexa, as well as all the httpse stable rule domains, and prints out which domains are in common. This can be used to manually test domains.
+alexa1000.py loads the 1000 most popular domains from alexa, as well as all the httpse rule domains that have trigged Firefox's MCB, and prints out which domains are in common. This can be used to manually test domains.
 
 Firefox mochitest output
 ------------------------
