@@ -32,7 +32,7 @@ class HTTPSERuleUpdater:
             for elem in root.iter():
                 if elem.tag == 'target':
                     for domain in domains:
-                        if domain in elem.attrib['host']:
+                        if elem.attrib['host'][-len(domain):] == domain:
                             rulesets[domain] = filename
         
         # update the ruleset xml files
